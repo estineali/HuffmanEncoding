@@ -1,7 +1,7 @@
 # HuffmanEncoding
 Small group project implementing huffman encoding using heaps and sorted SLL
 
-    #Members: 
+    Members: 
         Fatima Nadeem
         Kabir Kumar 
         Muhammad Shahrom Ali 
