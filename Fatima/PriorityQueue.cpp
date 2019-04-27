@@ -8,7 +8,7 @@ PriorityQueue::PriorityQueue()
 {
     s = new SLList;
     sentinal = new Node;
-    sentinal->data = NULL;
+    sentinal->x = NULL;
     sentinal->next = s->GetHead();  //sentinal's next points to head
 }
 PriorityQueue::~PriorityQueue()
@@ -21,7 +21,7 @@ PriorityQueue::~PriorityQueue()
 void PriorityQueue::Enqueue(T x)   //According to priority
 {
     Node* u = new Node;
-    u->data = x;
+    u->x = x;
 
     if ((s->Size()) == 0)
     {
@@ -33,7 +33,7 @@ void PriorityQueue::Enqueue(T x)   //According to priority
     {
         Node* temp = sentinal;
 
-        while(((temp->next) != NULL) && ((u->data[0]) > (temp->next->data[0])))
+        while(((temp->next) != NULL) && ((u->w) > (temp->next->w)))
         {
             temp = temp->next;
         }
