@@ -68,5 +68,7 @@ void PriorityQueue::Enqueue(T x)   //According to priority
 
 T PriorityQueue::DeleteMin()
 {
+    sentinal->next = s.GetHead()->next;
+
     return s->Pop();
 }
