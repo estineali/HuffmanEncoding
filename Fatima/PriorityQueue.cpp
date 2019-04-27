@@ -33,7 +33,7 @@ void PriorityQueue::Enqueue(T x)   //According to priority
     {
         Node* temp = sentinal;
 
-        while(((temp->next) != NULL) && ((u->data) > (temp->next->data)))
+        while(((temp->next) != NULL) && ((u->data[0]) > (temp->next->data[0])))
         {
             temp = temp->next;
         }
@@ -41,7 +41,7 @@ void PriorityQueue::Enqueue(T x)   //According to priority
         u->next = temp->next;
         temp->next = u;
 
-        if(u->next == s->GetHead())   //if temp is tail
+        if(u->next == s->GetHead())
         {
             s->SetHead(u);
         }
@@ -66,7 +66,7 @@ void PriorityQueue::Enqueue(T x)   //According to priority
     s->SetSize((s->Size()) + 1);
 }
 
-T PriorityQueue::DeleteMin()
+T PriorityQueue::DeleteMin()  //Delete head
 {
     sentinal->next = s.GetHead()->next;
 
