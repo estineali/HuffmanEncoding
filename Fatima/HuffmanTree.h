@@ -16,7 +16,7 @@ public:
     HuffmanTree(PriorityQueue*);
     ~HuffmanTree;
 
-    char* GenCode(T);
+    char* GenCode(char);
 };
 
 
