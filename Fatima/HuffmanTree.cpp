@@ -34,7 +34,7 @@ HuffmanTree::HuffmanTree(string text)   //Creates HuffmanTree
 
     while(pq->Size() > 1)
     {
-        left = pq->DeleteMin();
+        left = pq->DeleteMin();  ///this part has issues. Delete_min doesn't work here because I don't want to delete the node itself, I want get the node itself and change head and sentinal
         left->next = NULL;
         weight = left->w;
 
