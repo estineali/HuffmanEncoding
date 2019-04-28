@@ -2,6 +2,8 @@
 
 #pragma once
 
+#include <unordered_map>
+
 #include "HuffmanTree.h"
 
 using namespace std;
@@ -9,11 +11,26 @@ using namespace std;
 HuffmanTree::HuffmanTree()
 {}
 
-HuffmanTree::HuffmanTree(PriorityQueue* pq)
+HuffmanTree::HuffmanTree(string text)   //Creates HuffmanTree
 {
     Node* left;
     Node* right;
     int weight;
+
+    pq = new PriorityQueue;
+
+    unordered_map<char, int> freq;
+	for (char ch : text)
+    {
+		freq[ch]++;
+	}
+
+	///I don't know if this is how we should iterate over unorderedmap but idk I just typed something
+	for (char ch : freq)
+    {
+        Node* u = new Node(ch, freq[ch]);
+        pq->Enqueue(u);
+    }
 
     while(pq->Size() > 1)
     {
@@ -29,11 +46,11 @@ HuffmanTree::HuffmanTree(PriorityQueue* pq)
         root->left = left;
         root->right = right;
 
-        pq->Enqueue(root*);
+        pq->Enqueue(root);
     }
 }
 
-char* HuffmanTree::GenCode(T)
+char* HuffmanTree::GenCode(char)  //Generates Code using the HuffmanTree created. Some kind of binary tree search algorithm perhaps
 {
 
 }
