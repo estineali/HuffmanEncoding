@@ -10,6 +10,7 @@ class HuffmanTree
 {
 private:
     Node* root;
+    PriorityQueue* pq;
 
 public:
     HuffmanTree();
