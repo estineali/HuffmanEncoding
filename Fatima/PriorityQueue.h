@@ -2,19 +2,28 @@
 
 #pragma once
 
-#include "SLList.h"
+#include "Node.h"
 
 using namespace std;
 
 class PriorityQueue
 {
-    SLList* s;
+    int n;
     Node* sentinal;
+    Node* head;
+    Node* tail;
 
 public:
     PriorityQueue();
     ~PriorityQueue();
 
-    void Enqueue(T);
-    T DeleteMin();
+    void Enqueue(Node*);
+    Node* DeleteMin();
+
+    int Size();
+    void SetSize(T);
+    Node* GetHead();
+    Node* GetTail();
+    void SetHead(Node*);
+    void SetTail(Node*);
 };
