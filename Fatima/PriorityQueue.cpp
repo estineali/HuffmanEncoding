@@ -85,7 +85,7 @@ Node* PriorityQueue::DeleteMin()  //Delete head
         return NULL;
     }
 
-    T x = head->x;
+    char x = head->x;
     Node* u = head;
     head = head->next;
     sentinal->next = head;
@@ -104,7 +104,7 @@ int PriorityQueue::Size()
     return n;
 }
 
-void PriorityQueue::SetSize(T n)
+void PriorityQueue::SetSize(int n)
 {
     this->n = n;
 }
