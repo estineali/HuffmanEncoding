@@ -96,7 +96,7 @@ Node* PriorityQueue::DeleteMin()  //Delete head
         tail = NULL;
     }
 
-    return head;
+    return x;
 }
 
 int PriorityQueue::Size()
