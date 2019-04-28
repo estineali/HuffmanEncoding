@@ -10,14 +10,12 @@ Node::Node()
 {
     w = 0;
     x = NULL;
-    isLeaf = false;
 }
 
 Node::Node(int w, char x)
 {
     this->w = w;
     this->x = x;
-    isLeaf = false;
 }
 
 Node::~Node()
