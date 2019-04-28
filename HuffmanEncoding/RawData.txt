@@ -1,0 +1,25 @@
+binaryTree Based implementation:
+	1. 500 characters
+		- Huffman Tree Creation time : 8 ms 
+		- Encoding time : 3 ms
+		- Decoding time : 35 ms 
+	2. 1000 characters
+		- Huffman Tree Creation time : 14ms
+		- Encoding time : 3 ms
+		- Decoding time : 47 ms
+	3. 10000 characters
+		- Huffman Tree Creation time : 109 ms
+		- Encoding time : 8 ms
+		- Decoding time : 2017 ms
+	4. 20000 characters
+		- Huffman Tree Creation time : 200 ms
+		- Encoding time : 8 ms
+		- Decoding time : 3711 ms
+	5. 50000 characters
+		- Huffman Tree Creation time : 484 ms
+		- Encoding time : 9 ms
+		- Decoding time : 18495 ms
+	6. 100000 characters
+		- Huffman Tree Creation time : 977 ms
+		- Encoding time : 9 ms
+		- Decoding time : 159727 ms.
