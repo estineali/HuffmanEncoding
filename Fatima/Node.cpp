@@ -13,7 +13,7 @@ Node::Node()
     isLeaf = false;
 }
 
-Node::Node(w, x)
+Node::Node(int w, char x)
 {
     this->w = w;
     this->x = x;
