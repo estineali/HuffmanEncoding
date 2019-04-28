@@ -7,7 +7,6 @@ struct Node
     Node* right;
     Node* left;
     Node* next;
-    bool isLeaf;  ///for codegen
 
     Node();
     Node(int, char);
