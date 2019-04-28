@@ -3,13 +3,13 @@
 struct Node
 {
     int w;
-    T x;
+    char x;
     Node* right;
     Node* left;
     Node* next;
-    bool isLeaf;
+    bool isLeaf;  ///for codegen
 
     Node();
-    Node(w, x);
+    Node(int, char);
     ~Node();
 };
