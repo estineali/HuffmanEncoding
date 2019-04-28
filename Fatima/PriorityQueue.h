@@ -21,7 +21,7 @@ public:
     Node* DeleteMin();
 
     int Size();
-    void SetSize(T);
+    void SetSize(int);
     Node* GetHead();
     Node* GetTail();
     void SetHead(Node*);
