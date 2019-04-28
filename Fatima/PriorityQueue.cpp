@@ -6,27 +6,39 @@
 
 PriorityQueue::PriorityQueue()
 {
-    s = new SLList;
+    n = 0;
+
+    head = NULL;
+    tail = NULL;
+
     sentinal = new Node;
-    sentinal->x = NULL;
-    sentinal->next = s->GetHead();  //sentinal's next points to head
+    sentinal->next = head;  //sentinal's next points to head
 }
+
 PriorityQueue::~PriorityQueue()
 {
-    delete sentinal;
-    sentinal = NULL;
-    delete s;
+    Node* u = sentinal;
+
+    while(u != NULL)
+    {
+        sentinal = head;
+        if (head != NULL)
+        {
+            head = head->next;
+        }
+
+        delete u;
+        u = sentinal;
+    }
+
+    tail = NULL;
 }
 
-void PriorityQueue::Enqueue(T x)   //According to priority
+void PriorityQueue::Enqueue(Node* u)   //According to priority
 {
-    Node* u = new Node;
-    u->x = x;
-
-    if ((s->Size()) == 0)
+    if (n == 0)
     {
-        s->SetHead(u);
-        s->SetTail(u);
+        head = tail = u;
         sentinal->next = u;
     }
     else
@@ -41,13 +53,13 @@ void PriorityQueue::Enqueue(T x)   //According to priority
         u->next = temp->next;
         temp->next = u;
 
-        if(u->next == s->GetHead())
+        if(u->next == head)
         {
-            s->SetHead(u);
+            head = u;
         }
-        else if(s->GetTail()->next == u)
+        else if(tail->next == u)
         {
-            s->SetTail(u);
+            tail = u;
         }
 
 //        if(temp->next == NULL)   //if temp is tail
@@ -63,12 +75,58 @@ void PriorityQueue::Enqueue(T x)   //According to priority
 
     }
 
-    s->SetSize((s->Size()) + 1);
+    n++;
 }
 
-T PriorityQueue::DeleteMin()  //Delete head
+Node* PriorityQueue::DeleteMin()  //Delete head
 {
-    sentinal->next = s.GetHead()->next;
+    if (n == 0)
+    {
+        return NULL;
+    }
 
-    return s->Pop();
+    T x = head->x;
+    Node* u = head;
+    head = head->next;
+    sentinal->next = head;
+    delete u;
+
+    if(--n == 0)
+    {
+        tail = NULL;
+    }
+
+    return head;
 }
+
+int PriorityQueue::Size()
+{
+    return n;
+}
+
+void PriorityQueue::SetSize(T n)
+{
+    this->n = n;
+}
+
+Node* PriorityQueue::GetHead()
+{
+    return head;
+}
+
+Node* PriorityQueue::GetTail()
+{
+    return tail;
+}
+
+void PriorityQueue::SetHead(Node* node)
+{
+    head = node;
+}
+
+void PriorityQueue::SetTail(Node* node)
+{
+    tail = node;
+}
+
+
