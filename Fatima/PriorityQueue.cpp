@@ -45,7 +45,7 @@ void PriorityQueue::Enqueue(Node* u)   //According to priority
     {
         Node* temp = sentinal;
 
-        while(((temp->next) != NULL) && ((u->w) > (temp->next->w)))
+        while(((temp->next) != NULL) && ((u->freq) < (temp->next->freq)))
         {
             temp = temp->next;
         }
@@ -78,25 +78,32 @@ void PriorityQueue::Enqueue(Node* u)   //According to priority
     n++;
 }
 
-Node* PriorityQueue::DeleteMin()  //Delete head
-{
-    if (n == 0)
-    {
-        return NULL;
-    }
+//Node* PriorityQueue::DeleteMin()  //Delete head
+//{
+//    if (n == 0)
+//    {
+//        return NULL;
+//    }
+//
+//    char x = head->x;
+//    Node* u = head;
+//    head = head->next;
+//    sentinal->next = head;
+//    delete u;
+//
+//    if(--n == 0)
+//    {
+//        tail = NULL;
+//    }
+//
+//    return x;
+//}
 
-    char x = head->x;
-    Node* u = head;
+void PriorityQueue::Pop()
+{
     head = head->next;
     sentinal->next = head;
-    delete u;
-
-    if(--n == 0)
-    {
-        tail = NULL;
-    }
-
-    return x;
+    n--;
 }
 
 int PriorityQueue::Size()
@@ -104,29 +111,29 @@ int PriorityQueue::Size()
     return n;
 }
 
-void PriorityQueue::SetSize(int n)
-{
-    this->n = n;
-}
+//void PriorityQueue::SetSize(int n)
+//{
+//    this->n = n;
+//}
 
 Node* PriorityQueue::GetHead()
 {
     return head;
 }
 
-Node* PriorityQueue::GetTail()
-{
-    return tail;
-}
+//Node* PriorityQueue::GetTail()
+//{
+//    return tail;
+//}
 
-void PriorityQueue::SetHead(Node* node)
-{
-    head = node;
-}
+//void PriorityQueue::SetHead(Node* node)
+//{
+//    head = node;
+//}
 
-void PriorityQueue::SetTail(Node* node)
-{
-    tail = node;
-}
+//void PriorityQueue::SetTail(Node* node)
+//{
+//    tail = node;
+//}
 
 
