@@ -1,0 +1,19 @@
+500 - 	Huffman Tree Creation time: 0 milliseconds.
+	Encoding time: 0 milliseconds.
+	Decoding time: 93 milliseconds.
+
+1000 - 	Huffman Tree Creation time: 0 milliseconds.
+	Encoding time: 0 milliseconds.
+	Decoding time: 328 milliseconds.
+
+10000 - Huffman Tree Creation time: 0 milliseconds.
+	Encoding time: 0 milliseconds.
+	Decoding time: 228646 milliseconds.
+
+20000 - Huffman Tree Creation time: 0 milliseconds.
+	Encoding time: 0 milliseconds.
+	Decoding time: 1035051 milliseconds.
+
+
+
+
