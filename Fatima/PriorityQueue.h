@@ -19,11 +19,12 @@ public:
 
     void Enqueue(Node*);
     Node* DeleteMin();
+    void Pop();
 
     int Size();
-    void SetSize(int);
+//    void SetSize(int);
     Node* GetHead();
-    Node* GetTail();
-    void SetHead(Node*);
-    void SetTail(Node*);
+//    Node* GetTail();
+//    void SetHead(Node*);
+//    void SetTail(Node*);
 };
