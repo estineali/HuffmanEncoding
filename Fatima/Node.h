@@ -1,14 +1,8 @@
 #pragma once
 
 struct Node
-{
-    int w;
-    char x;
-    Node* right;
-    Node* left;
-    Node* next;
-
-    Node();
-    Node(int, char);
-    ~Node();
+{// A Tree node
+	char ch;
+	int freq;
+	Node *left, *right, *next;
 };
